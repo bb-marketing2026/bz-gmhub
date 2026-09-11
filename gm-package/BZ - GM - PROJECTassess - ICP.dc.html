@@ -22,6 +22,7 @@
     .cp, .cp *{font-family:'Carlito','Calibri',sans-serif;box-sizing:border-box}
     .cp p{text-wrap:pretty}
     .pg{display:flex;flex-direction:column;position:relative}
+    .page.brk{padding:30px 34px}
     .brk{break-before:page}
     .eyb{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#137B8F}
     .h2{font-size:27px;line-height:1.08;font-weight:700;color:#153E5A;margin:8px 0 0;letter-spacing:-.01em}
@@ -37,9 +38,14 @@
     * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .bz-backhub{position:absolute;top:14px;left:14px;z-index:99999;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#fff;background:rgba(21,62,90,.92);border:1px solid rgba(255,255,255,.18);padding:7px 12px 7px 11px;border-radius:20px;text-decoration:none;box-shadow:0 4px 14px rgba(40,75,99,.28)}
     @media print{.bz-backhub{display:none!important}}
+    .bz-pdfbtn{position:absolute;top:14px;left:112px;z-index:99999;display:inline-flex;align-items:center;gap:6px;font-family:'Carlito','Calibri',sans-serif;font-size:12px;font-weight:700;color:#fff;background:#137B8F;border:1px solid rgba(255,255,255,.18);padding:7px 13px;border-radius:20px;cursor:pointer;box-shadow:0 4px 14px rgba(19,123,143,.3)}
+    .bz-pdfbtn:hover{background:#0f6474}
+    @media print{.bz-pdfbtn{display:none!important}}
   </style>
+  <script>document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-print-pdf]');if(t){e.preventDefault();window.print();}});</script>
 </helmet>
 <a href="BZ%20-%20GM%20Hub.dc.html" class="bz-backhub"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>GM Hub</a>
+<button type="button" data-print-pdf="1" class="bz-pdfbtn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="m7 11 5 5 5-5"></path><path d="M4 20h16"></path></svg>Save as PDF</button>
 
 <doc-page size="a4" orientation="portrait" margin="1cm">
 
